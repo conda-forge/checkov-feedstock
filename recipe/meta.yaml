@@ -1,5 +1,5 @@
 {% set name = "checkov" %}
-{% set version = "2.5.10" %}
+{% set version = "3.0.13" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/checkov-{{ version }}.tar.gz
-  sha256: a968ca91e6ffe53d93f2c9b45c168096b4d0e7511b1e74d126c7aab68afc06cb
+  sha256: 7bfc17052a01752f553f331a1a2aa2e22bf1f92a0b5e94936666a3604deea946
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
@@ -44,11 +44,10 @@ requirements:
     - docker-py
     - configargparse
     - argcomplete
-    - policyuniverse
     - typing-extensions >=4.1.0
     - importlib-metadata >=0.12
     - cachetools
-    - cyclonedx-python-lib >=2.4.0,<4.0.0
+    - cyclonedx-python-lib >=5.0.0
     - packageurl-python
     - click >=8.0.0
     - aiohttp
@@ -67,6 +66,7 @@ requirements:
     - spdx-tools >=0.8.0,<0.9.0
     - license-expression
     - rustworkx
+    - pydantic
 
 test:
   imports:
