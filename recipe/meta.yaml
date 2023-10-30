@@ -44,7 +44,6 @@ requirements:
     - docker-py
     - configargparse
     - argcomplete
-    - policyuniverse
     - typing-extensions >=4.1.0
     - importlib-metadata >=0.12
     - cachetools
