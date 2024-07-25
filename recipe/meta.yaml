@@ -1,5 +1,5 @@
 {% set name = "checkov" %}
-{% set version = "3.2.204" %}
+{% set version = "3.2.205" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/checkov-{{ version }}.tar.gz
-  sha256: 0d6250e1d359717424b4479020a24bb158fae9dff9c57f99a395197e2080e6df
+  sha256: 2a6aa80a53e19623560450e02b64fedfe6057d0e326ef0f16f7d69ea84c412f2
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
