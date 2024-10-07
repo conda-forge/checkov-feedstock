@@ -22,6 +22,7 @@ requirements:
     - python
     - pyyaml
     - pip
+    - setuptools
   run:
     - python
     - bc-python-hcl2 ==0.4.2
