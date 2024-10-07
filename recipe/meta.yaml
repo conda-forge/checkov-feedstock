@@ -1,5 +1,5 @@
 {% set name = "checkov" %}
-{% set version = "3.2.254" %}
+{% set version = "3.2.257" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/checkov-{{ version }}.tar.gz
-  sha256: 754a9e8bb5ba9822fd9c8988d57a10c19b8f97d1b8e473bbcc290b38eb25a912
+  sha256: 51766e7b2d28694931893986dc7c13c3fea8f7da72d1a03b5c0c475e35e40c78
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
@@ -22,6 +22,7 @@ requirements:
     - python
     - pyyaml
     - pip
+    - setuptools
   run:
     - python
     - bc-python-hcl2 ==0.4.2
@@ -40,7 +41,7 @@ requirements:
     - jmespath >=1.0.0,<2.0.0
     - tqdm >=4.65.0,<5.0.0
     - packaging >=23.0,<24.0
-    - cloudsplaining >=0.6.2,<0.7.0
+    - cloudsplaining >=0.7.0,<0.8.0
     - networkx <2.7
     - dockerfile-parse >=2.0.0,<3.0.0
     - docker-py >=6.0.1,<8.0.0
