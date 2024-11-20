@@ -1,5 +1,5 @@
 {% set name = "checkov" %}
-{% set version = "3.2.303" %}
+{% set version = "3.2.305" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/checkov-{{ version }}.tar.gz
-  sha256: 9d77b3edaef3b7a33fe06b9025471c19cffdedea74f7b78d8719f538e0e7bf7e
+  sha256: 5e537a5d68282c9479decf496b919b08ff25db19f5c8df8ad1ed67d015092a70
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
@@ -26,7 +26,7 @@ requirements:
   run:
     - python
     - bc-python-hcl2 ==0.4.2
-    - bc-detect-secrets ==1.5.22
+    - bc-detect-secrets >=1.5.24,<1.6.0
     - bc-jsonpath-ng ==1.6.1
     - pycep-parser ==0.5.1
     - tabulate >=0.9.0,<0.10.0
