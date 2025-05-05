@@ -70,7 +70,7 @@ requirements:
     - rustworkx >=0.13.0,<0.14.0
     - pydantic >=2.0.0,<3.0.0
     - urllib3 >=1.26.0,<2.0.0
-    - asteval >=1.0.5,<2.0.0
+    - asteval ==1.0.5
 
 test:
   imports:
