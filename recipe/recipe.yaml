@@ -13,9 +13,9 @@ source:
   sha256: 87c68c88dd15556404d3ab0ca1eb9d3e7da4fbab33936c1d045cdaed872e17c5
 
 build:
-  number: 0
-  skip: (match(python, "<3.11") and osx and x86_64) or match(python, ">3.11")
+  skip: (match(python, "<3.11") and osx and x86_64)
   script: ${{ PYTHON }} -m pip install . -vv
+  number: 1
 
 requirements:
   build:
