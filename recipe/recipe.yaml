@@ -1,23 +1,28 @@
-{% set name = "checkov" %}
-{% set version = "3.2.443" %}
+schema_version: 1
+
+context:
+  name: checkov
+  version: 3.2.443
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/checkov-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/checkov-${{ version }}.tar.gz
   sha256: 42609d90d5ac710deead0477964605a5837c58ac8587ec4b286263190421e4ff
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv
   number: 0
-  skip: true  # [py<39 or (py<311 and osx and x86_64) or py>311]
+  skip: (match(python, "<3.11") and osx and x86_64) or match(python, ">3.11")
+  script: ${{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
-    - python                              # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}  # [build_platform != target_platform]
+    - if: build_platform != target_platform
+      then: python
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
   host:
     - python
     - pyyaml
@@ -62,8 +67,10 @@ requirements:
     - jsonschema <5.0.0,>=4.17.0
     - prettytable <4.0.0,>=3.6.0
     - charset-normalizer <4.0.0,>=3.1.0
-    - pyston_lite_autoload ==2.3.5  # [py<311 and unix and x86_64]
-    - pyston_lite ==2.3.5  # [py<311 and unix and x86_64]
+    - if: match(python, "<3.11") and unix and x86_64
+      then: pyston_lite_autoload ==2.3.5
+    - if: match(python, "<3.11") and unix and x86_64
+      then: pyston_lite ==2.3.5
     - requests <3.0.0,>=2.28.0
     - yarl <2.0.0,>=1.9.1
     - openai <1.0.0
@@ -73,19 +80,16 @@ requirements:
     - pydantic <3.0.0,>=2.0.0
     - asteval ==1.0.5
 
-test:
-  imports:
-    - checkov
-  commands:
-    - pip check
-  requires:
-    - pip
+tests:
+  - python:
+      imports:
+        - checkov
 
 about:
-  home: https://github.com/bridgecrewio/checkov
   summary: Infrastructure as code static analysis
   license: Apache-2.0
   license_file: LICENSE
+  homepage: https://github.com/bridgecrewio/checkov
 
 extra:
   recipe-maintainers:
