@@ -206,4 +206,5 @@ Feedstock Maintainers
 
 * [@borchero](https://github.com/borchero/)
 * [@nick-harmening](https://github.com/nick-harmening/)
+* [@xhochy](https://github.com/xhochy/)
 
