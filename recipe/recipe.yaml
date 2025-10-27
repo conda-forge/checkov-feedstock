@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: checkov
-  version: 3.2.443
+  version: "3.2.488"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/checkov-${{ version }}.tar.gz
-  sha256: 42609d90d5ac710deead0477964605a5837c58ac8587ec4b286263190421e4ff
+  sha256: 87c68c88dd15556404d3ab0ca1eb9d3e7da4fbab33936c1d045cdaed872e17c5
 
 build:
   number: 0
