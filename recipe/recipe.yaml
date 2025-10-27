@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: checkov
-  version: 3.2.443
+  version: "3.2.488"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/checkov-${{ version }}.tar.gz
-  sha256: 42609d90d5ac710deead0477964605a5837c58ac8587ec4b286263190421e4ff
+  sha256: 87c68c88dd15556404d3ab0ca1eb9d3e7da4fbab33936c1d045cdaed872e17c5
 
 build:
   number: 0
@@ -29,11 +29,11 @@ requirements:
     - pip
     - setuptools
   run:
-    - urllib3 ==1.26.20
+    - urllib3 >=1.26.20
     - typing_extensions <5.0.0,>=4.5.0
     - python
-    - bc-python-hcl2 ==0.4.2
-    - bc-detect-secrets ==1.5.44
+    - bc-python-hcl2 ==0.4.3
+    - bc-detect-secrets ==1.5.45
     - bc-jsonpath-ng ==1.6.1
     - pycep-parser ==0.5.1
     - tabulate >=0.9.0,<0.10.0
@@ -73,12 +73,11 @@ requirements:
       then: pyston_lite ==2.3.5
     - requests <3.0.0,>=2.28.0
     - yarl <2.0.0,>=1.9.1
-    - openai <1.0.0
     - spdx-tools >=0.8.0,<0.9.0
     - license-expression <31.0.0,>=30.1.0
     - rustworkx >=0.13.0,<1.0.0
     - pydantic <3.0.0,>=2.0.0
-    - asteval ==1.0.5
+    - asteval ==1.0.6
 
 tests:
   - python:
