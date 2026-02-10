@@ -25,6 +25,7 @@ requirements:
     - pip
     - pyyaml
   run:
+    - python >=${{ python_min }}
     - urllib3 >=1.26.20
     - typing_extensions >=4.5.0
     - python
@@ -79,6 +80,7 @@ tests:
       # We decided to loosen those pins (especially the upper bounds) to make checkov easier to install in conda environments.
       # This breaks pip check because the package versions we install may not match exactly what is specified in the Python package metadata.
       pip_check: false
+      python_version: ${{ python_min }}.*
 
 about:
   summary: Infrastructure as code static analysis
