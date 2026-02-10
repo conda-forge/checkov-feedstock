@@ -3,6 +3,7 @@ schema_version: 1
 context:
   name: checkov
   version: "3.2.489"
+  python_min: "3.11"
 
 package:
   name: ${{ name|lower }}
@@ -61,10 +62,6 @@ requirements:
     - jsonschema >=4.17.0
     - prettytable >=3.6.0
     - charset-normalizer >=3.1.0
-    - if: match(python, "<3.11") and unix and x86_64
-      then: pyston_lite_autoload >=2.3.5
-    - if: match(python, "<3.11") and unix and x86_64
-      then: pyston_lite >=2.3.5
     - requests >=2.28.0
     - yarl >=1.9.1
     - spdx-tools >=0.8.0
