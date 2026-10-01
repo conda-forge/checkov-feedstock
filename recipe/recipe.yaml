@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: checkov
-  version: "3.3.21"
+  version: 3.3.22
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/checkov-${{ version }}.tar.gz
-  sha256: 5f7e204ead3550efe9d2770a91667c70b9791f596dcf84677237302cff565a96
+  sha256: f77b44e9264d53cbbf2976eddf6b2b17d05a912294ca40f2a7feef4b01d61a76
 
 build:
   skip: (match(python, "<3.11") and osx and x86_64)
@@ -34,7 +34,7 @@ requirements:
     - typing_extensions <5.0.0,>=4.5.0
     - python
     - bc-python-hcl2 ==0.4.3
-    - bc-detect-secrets ==1.5.50
+    - bc-detect-secrets ==1.5.52
     - ecdsa <1.0.0,>=0.19.0
     - bc-jsonpath-ng ==1.6.1
     - pycep-parser ==0.5.1
