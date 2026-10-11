@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: checkov
-  version: "3.3.26"
+  version: "3.3.27"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/checkov-${{ version }}.tar.gz
-  sha256: 90df926e9acf102452ba28bebe910738d76d84b5ce5974475fadae4bc319ddcf
+  sha256: 84ba24d56eaba864c1937fb3edc8d8a0539a0c1b89a274512af6cc9486b8179d
 
 build:
   skip: (match(python, "<3.11") and osx and x86_64)
