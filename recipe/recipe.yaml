@@ -2,15 +2,15 @@ schema_version: 1
 
 context:
   name: checkov
-  version: "3.4.6"
+  version: 3.4.7
 
 package:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/5e/da/fd908b2db5e0f98fb6232bfa1a3b1b7fe715761ab92f88ad7a882ad1a2a3/checkov-${{ version }}.tar.gz
-  sha256: 22c5a5bb41477e251f4ba19a2a7a412f472e6d86e76ecb1cdec94eea267259e1
+  url: https://files.pythonhosted.org/packages/8a/47/44eb31abd56b9088446884def9d2b5662e82f8ac8723f1b5bbb36b98773c/checkov-${{ version }}.tar.gz
+  sha256: c63c6180e6fce7ecaec9cad92f6234ae0f6224d8d4ebae798c0d531dde41ea9b
 
 build:
   skip: (match(python, "<3.11") and osx and x86_64)
@@ -57,7 +57,7 @@ requirements:
     - argcomplete <4.0.0,>=3.0.0
     - importlib-metadata <8.0.0,>=6.0.0
     - cachetools >=5.2.0,<6.0.0
-    - cyclonedx-python-lib <8.0.0,>=6.0.0
+    - cyclonedx-python-lib <12.0.0,>=8.0.0
     - packageurl-python >=0.11.1,<0.14.0
     - click <9.0.0,>=8.1.0
     - aiohttp <3.15.0,>=3.8.0
