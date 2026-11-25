@@ -2,15 +2,15 @@ schema_version: 1
 
 context:
   name: checkov
-  version: "3.4.8"
+  version: "3.4.10"
 
 package:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/93/7c/a5d87349dffaebeb5f93d52e60dc87979a8705d94550573575f04ca6623f/checkov-${{ version }}.tar.gz
-  sha256: eee7a00169c5a16a4406fe09480e976158a26ce17d208f876077489b74d0aa59
+  url: https://files.pythonhosted.org/packages/00/4b/b39218bf1fafb6bfca1e63a7b43a909510d21be700f9a40df3d586c016aa/checkov-${{ version }}.tar.gz
+  sha256: 5626d5115d91b23a5de2ad898efb13c64d00d8fb81176697ab3c64c89e16635a
 
 build:
   skip: (match(python, "<3.11") and osx and x86_64)
